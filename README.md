@@ -5,9 +5,14 @@ do messages have idempotency guarantees? what happens with message replay.
 
 are there any values that grow or shrink with the size of the datagram? e.g. message size?
 
-i should make a tool that is able to sync video footage, overlay keyboard input, overlay timestamps with generating wireshark recordings.
+i should make a tool that is able to sync video footage, overlay keyboard input, overlay timestamps with generating wireshark recordings. i don't think there is any other way to do this.
 
-i don't think there is any other way to do this.
+# video tool
+- take screenshots a configurable amount per second (default 10?)
+- capture keyboard state
+- save a timestamp
+- overlay keyboard
+- show captures, label captures, generate wireshark filters for labeled captures?
 
 # quesitons
 what kind of information do they need to transmit?
