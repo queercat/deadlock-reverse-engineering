@@ -19,3 +19,8 @@ what kind of information do they need to transmit?
 - velocity?
 - what item we're using?
 - buying / selling an item? (is this maybe TCP?)
+
+# filters
+```wireshark
+ip.src == 192.168.1.1/24 && frame.time_relative >= 15.081 && frame.time_relative <= 40
+```
