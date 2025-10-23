@@ -11,9 +11,11 @@ use server::server::Server;
 #[brw(little)]
 #[derive(Debug)]
 struct Data {
+    // 130 == player data?
     kind: u8,
     client_tick: u16,
     server_tick: u16,
+    session_id: u32
 }
 
 fn dump(data: &[u8]) -> std::io::Result<()> {
