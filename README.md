@@ -3,6 +3,8 @@ im guessing the UDP protocol has a kind of handshake that registers an identifie
 
 do messages have idempotency guarantees? what happens with message replay.
 
+are there any values that grow or shrink with the size of the datagram? e.g. message size?
+
 # quesitons
 what kind of information do they need to transmit?
 - position
