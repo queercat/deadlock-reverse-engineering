@@ -5,6 +5,10 @@ do messages have idempotency guarantees? what happens with message replay.
 
 are there any values that grow or shrink with the size of the datagram? e.g. message size?
 
+i should make a tool that is able to sync video footage, overlay keyboard input, overlay timestamps with generating wireshark recordings.
+
+i don't think there is any other way to do this.
+
 # quesitons
 what kind of information do they need to transmit?
 - position
