@@ -29,15 +29,27 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         Ok(())
     });
 
-    let datagram = fs::read("data/datagram.bin")?;
+    let datagrams = fs::read_to_string("data/output.mayo")?;
 
-    let data = Data::read(&mut Cursor::new(datagram))?;
+    for line in datagrams.split("\n") {
+        let mut data = Vec::<u8>::new();
 
-    dbg!(&data);
+        for hex in line.split(":") {
+            if hex.len() == 0 {
+                continue;
+            }
+            data.push(u8::from_str_radix(hex, 16)?);
+        }
+
+        let mut cursor = Cursor::new(data);
+        let datagram = Data::read(&mut cursor)?;
+
+        dbg!(datagram);
+    }
 
     let mut buffer = Cursor::new([0u8; 16]);
 
-    data.write(&mut buffer)?;
+    // data.write(&mut buffer)?;
 
     let bytes = client.write(buffer.get_ref())?;
 
